@@ -42,6 +42,9 @@ app.get("/hello/:name/:age", (req, res) => {
   res.send(`hello ${req.params.name}, you are ${req.params.age} years old`);
 });
 
-app.listen(3002, "127.0.0.1", () => {
-  console.log("Listening to requests on port 3002");
+const PORT = process.env.PORT || 3002;
+const HOST = "0.0.0.0";
+
+app.listen(PORT, HOST, () => {
+  console.log(`Server running on http://${HOST}:${PORT}`);
 });
